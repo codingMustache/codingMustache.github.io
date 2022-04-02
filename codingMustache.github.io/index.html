@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+      <title>Coding Mustache</title>
+      <style>
+    body {
+        background: rgb(125, 198, 205);
+        color: rgb(45, 45, 45);
+        padding: 10px;
+        font-family: arial;
+    }
+    #all-contents {
+        max-width: 800px;
+        margin: auto;
+    }
+
+    /* navigation menu */
+    nav {
+        background: rgb(239, 80, 41);
+        margin: 0 auto;
+        margin-bottom: 20px;
+        display: flex;
+        padding: 10px;
+        border-radius: 15px;
+    }
+    nav h1 {
+        display: flex;
+        align-items: center;
+        color: white;
+        flex: 1;
+        margin: 0;
+    }
+    nav ul {
+        list-style-image: none;
+    }
+    nav li {
+        display: inline-block;
+        padding: 0 10px;
+    }
+    nav a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    /* main container area beneath menu */
+    main {
+        background: rgb(245, 238, 219);
+        display: flex;
+        border-radius: 15px;
+    }
+    .sidebar {
+        margin-right: 25px;
+        padding: 10px;
+    }
+    .sidebar img {
+        width: 200px;
+    }
+    .content {
+        flex: 1;
+        padding: 15px;
+    }
+    h2, h3 {
+        margin: 0px;
+    }
+    img {
+      border: groove .25em #EF5029;
+      border-radius: 40% 5% 40% 5%;
+    }
+</style>
+    </head>
+
+    <body>
+      <div class="all-content">
+        <nav>
+          <h1>Jorge's Website</h1>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+          </ul>
+        </nav>
+        <main>
+          <div class="sidebar">
+            <img src="./propic.jpeg" alt="It Me & Karl!!">
+          </div>
+          <div class="content">
+            <h2>Jorge Carvajal</h2>
+            <p>Student at Operation Spark</p>
+            <div class="interest">
+              <h3>Interest</h3>
+              <ul>
+                <li>Reading</li>
+                <li>Fiber Arts</li>
+                <li>Digital Arts</li>
+              </ul>
+            </div>
+          </div>
+        </main>
+      </div>
+    </body>
+</html>
