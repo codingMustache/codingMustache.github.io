@@ -181,15 +181,15 @@ function longest(stringOne, stringTwo) {
  */
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-    var arr = [];
-    arr.push(stringOne);
-    arr.push(stringTwo);
-    arr.sort();
-    if (arr[1] === arr[0]){
-        return 0;
-    } else if (stringTwo === arr[0]){
+    var arr = [];                            // Initiate Array
+    arr.push(stringOne);                     
+    arr.push(stringTwo);                     // Pushes both Strings to arr
+    arr.sort();                              // sorts arr
+    if (arr[1] === arr[0]){                  // compares the 2 values in the array
+        return 0;                            // is same return 0
+    } else if (stringTwo === arr[0]){        // if the 1st value in the array is StringTwo return -1
         return -1
-    } else {
+    } else {                                 // all other instances return 0
         return 1;
     }
     // YOUR CODE ABOVE HERE //
@@ -203,13 +203,13 @@ function sortAscending(stringOne, stringTwo) {
  */
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-    var arr = [];
-    arr.push(stringOne);
-    arr.push(stringTwo);
-    arr.sort();
-    if (arr[1] === arr[0]){
+    var arr = [];                       // Initiates Array
+    arr.push(stringOne);                
+    arr.push(stringTwo);                // Pushes strings to Array
+    arr.sort();                         // Sorts Array
+    if (arr[1] === arr[0]){             // Checks is values in array are the same
         return 0;
-    } else if (stringOne === arr[0]){
+    } else if (stringOne === arr[0]){   // if StringOne is the 1st value in the array retrun -1
         return -1;
     } else {
         return 1;
