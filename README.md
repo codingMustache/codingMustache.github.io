@@ -13,5 +13,4 @@ in terminal   git add -A
     reopen term
     run in term -> sudo apt-get install subversion
     in term -> npm install -g opspark
-    in term -> os install`
-testing
+    in term -> os install
