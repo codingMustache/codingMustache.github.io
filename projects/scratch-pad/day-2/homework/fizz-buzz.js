@@ -13,14 +13,14 @@
 function fizzBuzz() {
     // YOUR CODE GOES BELOW HERE //
 
-    for (var i = 1; i <= 100; i++){
-        if ( i % 3 === 0 && i % 5 === 0){
+    for (var i = 1; i <= 100; i++){                     // creates a count from 1-100
+        if ( i % 3 === 0 && i % 5 === 0){               //Checks for mutiples of 3 & 5
           console.log('FizzBuzz')
-        } else if (i % 3 === 0){
+        } else if (i % 3 === 0){                        //Checks for mutliples of 3
           console.log('Fizz')
-        } else if (i % 5 === 0){
+        } else if (i % 5 === 0){                        //Checks for mutliples of 3
           console.log('Buzz')
-        } else {
+        } else {                                        // else prints number (i)
           console.log(i)
         }
       }
