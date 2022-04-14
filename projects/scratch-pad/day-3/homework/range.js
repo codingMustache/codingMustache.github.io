@@ -27,11 +27,9 @@ function range(start, end) {
     if (start < end) { 
       for (var i = start; i <= end; i++) {
         output.push(i);}
-    } else if (start > end) {
+    } else {
       for (var i = start; i >= end; i--) {
         output.push(i);}
-    } else{
-      return end;
     }
     return output;
     // YOUR CODE GOES ABOVE HERE //

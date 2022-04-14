@@ -88,18 +88,8 @@ function typeOf(value) {
         return 'date';
     }  else if(Array.isArray(value)){
         return 'array';
-    } else if(typeof value === 'number'){
-        return 'number';
-    } else if(typeof value === 'boolean'){
-        return 'boolean'
-    } else if(typeof value === 'string'){
-        return 'string';
-    }  else if(typeof value === 'function'){
-        return 'function';
-    } else if(typeof value === 'undefined'){
-        return 'undefined';
-    } else{
-        return 'object';
+    } else {
+        return typeof value;
     }
     // YOUR CODE ABOVE HERE //
 }
