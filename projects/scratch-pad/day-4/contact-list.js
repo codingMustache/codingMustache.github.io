@@ -34,7 +34,7 @@
  */
 
 // YOUR CODE GOES BELOW HERE //
-function makeContact(id, nameFirst, nameLast) {
+function makeContact(id, nameFirst, nameLast) { //Factory Function A
 
 } 
 
@@ -43,14 +43,28 @@ function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
+    var contacts = []; //imagine that contact array holds objects
     
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
+        },
+        addContact(contact){
+            contacts.push(contacts)
+        },
+        findContact(){
+
+        },
+        removeContact(){
+
+        },
+        prinAllContactNames(){
+            
         }
+
     }
+    
 }
 
 
