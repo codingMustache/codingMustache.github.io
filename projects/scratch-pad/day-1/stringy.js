@@ -188,9 +188,9 @@ function sortAscending(stringOne, stringTwo) {
     if (arr[1] === arr[0]){                  // compares the 2 values in the array
         return 0;                            // is same return 0
     } else if (stringTwo === arr[0]){        // if the 1st value in the array is StringTwo return -1
-        return -1
+        return 1
     } else {                                 // all other instances return 0
-        return 1;
+        return -1;
     }
     // YOUR CODE ABOVE HERE //
 }
@@ -210,9 +210,9 @@ function sortDescending(stringOne, stringTwo) {
     if (arr[1] === arr[0]){             // Checks is values in array are the same
         return 0;
     } else if (stringOne === arr[0]){   // if StringOne is the 1st value in the array retrun -1
-        return -1;
-    } else {
         return 1;
+    } else {
+        return -1;
     }
     // YOUR CODE ABOVE HERE //
 }
