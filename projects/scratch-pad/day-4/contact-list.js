@@ -34,8 +34,12 @@
  */
 
 // YOUR CODE GOES BELOW HERE //
-function makeContact(id, nameFirst, nameLast) { //Factory Function A
-
+function makeContact(id, nameFirst, nameLast) { //Factory Function A 
+    var contacts = [];
+    var newObj = {id: id, nameFirst: nameFirst, nameLast: nameLast};
+    contacts.push(newObj);
+    return newObj;
+   
 } 
 
 
@@ -51,16 +55,27 @@ function makeContactList() {
             return contacts.length;
         },
         addContact(contact){
-            contacts.push(contacts)
+            contacts.push(contacts);
         },
-        findContact(){
-
+        findContact(fullName){
+            var fName = fullName.toLowerCase().split(' ');
+            for(var i = 0; i < contacts.length; i++){
+                if(contacts[i].nameFirst.toLowerCase() === fName[0] && contacts[i].nameLast.toLowerCase() === fName[1]){
+                    return contacts[i]
+                }
+            }
         },
-        removeContact(){
-
+        removeContact(contact){
+            for(var i = 0; i < contacts.length -1; i++){
+                if(contacts[i] === contact){
+                    contacts.splice(i);
+                }
+            }
         },
         prinAllContactNames(){
-            
+            for (key in contacts){
+                console.log(key[nameFirst]+ " " + key[nameLast])
+            }
         }
 
     }

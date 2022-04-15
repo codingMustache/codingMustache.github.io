@@ -87,8 +87,12 @@ function modifyStrings(strings, modify) {
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
     for(var i = 0; i < strings.length; i++){
-        return test(strings[i]) === test;
-    }
+        if(test(strings[i]) !== true){
+            return false;
+        }
+        
+    } 
+    return true;
     // YOUR CODE ABOVE HERE //
 }
 
