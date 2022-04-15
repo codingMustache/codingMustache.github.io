@@ -35,11 +35,8 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) { //Factory Function A 
-    var contacts = [];
     var newObj = {id: id, nameFirst: nameFirst, nameLast: nameLast};
-    contacts.push(newObj);
     return newObj;
-   
 } 
 
 
@@ -54,33 +51,28 @@ function makeContactList() {
         length: function() {
             return contacts.length;
         },
-        addContact(contact){
-            contacts.push(contacts);
+        addContact: function(contact){
+            contacts.push(contact);
         },
-        findContact(fullName){
-            var fName = fullName.toLowerCase().split(' ');
-            for(var i = 0; i < contacts.length; i++){
-                if(contacts[i].nameFirst.toLowerCase() === fName[0] && contacts[i].nameLast.toLowerCase() === fName[1]){
-                    return contacts[i]
+        findContact: function(fullName) {
+           for(var i = 0; i < contacts.length; i++){
+            if(contacts[i].nameFirst + ' ' + contacts[i].nameLast === fullName){
+                    return contacts[i];
                 }
             }
         },
-        removeContact(contact){
-            for(var i = 0; i < contacts.length -1; i++){
-                if(contacts[i] === contact){
-                    contacts.splice(i);
-                }
-            }
+        removeContact: function(contact) {
+            return contacts.splice(contact,1);
         },
-        prinAllContactNames(){
-            for (key in contacts){
-                console.log(key[nameFirst]+ " " + key[nameLast])
-            }
-        }
-
+        printAllContactNames(){
+           var pArr = []
+           for (var i = 0; i < contacts.length; i++){
+               pArr.push(contacts[i].nameFirst + " " + contacts[i].nameLast)
+           }
+           return pArr.join('\n')
+        }      
     }
-    
-}
+}        
 
 
 
