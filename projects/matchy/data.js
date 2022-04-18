@@ -13,8 +13,8 @@
 //////////////////////////////////////////////////////////////////////
 
 var animal  = {};
-animal.species = 'feline';
-animal['name'] = 'cat';
+animal.species = 'cat';
+animal['name'] = 'Jimmy';
 animal.noises = [];
 
 //////////////////////////////////////////////////////////////////////
@@ -37,11 +37,16 @@ animal.noises.push('miau');
  * Step 4 - Review
  *
  * 1. What are the different ways you can access properties on objects?
- *
+ *    There are 3 ways to access properties in an object:
+ *        (1)Through dot property notation accessor
+ *        (2)Square Bracket property notation accessor
+ *        (3)Object Destructuring
  * 2. What are the different ways of accessing elements on arrays?
- *
+ *     The 2 ways to access an element in an array is through 
+ *     bracket notation and destructuring
  * *******************************************************************
  */
+
 
 /* *******************************************************************
  * Step 5 - Take a Break!
@@ -55,15 +60,24 @@ animal.noises.push('miau');
 //////////////////////////////////////////////////////////////////////
 // Step 6 - A Collection of Animals //////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
-
-
-//////////////////////////////////////////////////////////////////////
+var animals = [];
+animals.push(animal);
+console.log(animals);
+var duck = { species: 'duck', name: 'Jerome', noises: ['quack', 'honk', 'sneeze', 'woosh'] };
+var dog = { species: 'dog', name: 'Jerry', noises: ['woof', 'bark', 'grrrr', 'brrrr'] }
+var pig = { species: 'pig', name: 'James', noises: ['snore', 'fart', 'snort', 'qoink'] }
+animals.push(duck);
+animals.push(dog);
+animals.push(pig);
+console.log(animals)
+;//////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
-
-
+var friends = []; // I choose array because you can populate it with any data type
+function getRandom(animals){
+  return Math.floor(Math.random() * animals.length);
+}
+animals[getRandom(animals)]['friends'] = friends;
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
  * move onto Part 2 in the file called "functions.js"
