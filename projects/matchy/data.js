@@ -73,11 +73,14 @@ console.log(animals)
 ;//////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-var friends = []; // I choose array because you can populate it with any data type
+var friends = [];
 function getRandom(animals){
   return Math.floor(Math.random() * animals.length);
 }
-animals[getRandom(animals)]['friends'] = friends;
+friends.push(animals[getRandom(animals)].name);
+console.log(friends);
+animals[1]["friends"] = friends;
+console.log(animals);
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
  * move onto Part 2 in the file called "functions.js"
