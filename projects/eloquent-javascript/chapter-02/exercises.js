@@ -31,8 +31,22 @@ function fizzBuzz(x, y) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function drawChessboard(size){
- 
+  let space = ' ';  
+  let str = '';
+  for (let i = 1; i <= (size * size); i++) {
+    str += space;
+    if (i % size === 0) {
+      str += '\n';
+          if (size % 2 === 1) {
+            space = (space === ' ')? '#': ' ';
+          }
+    } else {
+      space = (space === ' ')? '#': ' ';
+    }
+  }
+  console.log(str)
 }
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
