@@ -139,7 +139,15 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
-    
+    var noFriends = [];
+    for(let i = 0; i < array.length; i++){
+        if(array[i].name !== name){ 
+            if (!isFriend(name, array[i])) {
+                noFriends.push(array[i].name);
+            }
+        }
+    }
+    return noFriends;
 }
 
 //////////////////////////////////////////////////////////////////////
