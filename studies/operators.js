@@ -1,22 +1,49 @@
 
-            //**************************************//
-            //                                      //
-            //              Operators               //
-            //                                      //
-            //**************************************//
+// 0. Operator:
+/* 
+ 
+*/
 
-            //~~~~~What is an Operator~~~~~\\
-           
-            //~~~~~Assignment Operators~~~~~\\
-            
-            //~~~~~Arithmetic Operators~~~~~\\
 
-            //~~~~~Comparison Operators~~~~~\\
+
+// 1. Assignment Operators
+/* 
+ 
+*/
+
+
             
-            //~~~~~Logical Operators~~~~~\\
+// 2. Arithmetic Operators
+/* 
+ 
+*/
+
+
+
+// 3. Comparison Operators
+/* 
+ 
+*/
+
+
             
-            //~~~~~Unary Operators~~~~~\\
-            ////    Unary operators (!, typeOf, -)
+// 4. Logical Operators
+/* 
+ 
+*/
+
+
             
-            //~~~~~Ternary Operators~~~~~\\
-            /////   Ternary operator (a ? b : c)
+// 5. Unary Operators
+/* 
+ 
+*/
+////    Unary operators (!, typeOf, -)
+
+
+
+// 6. Ternary Operators
+/* 
+ 
+*/           
+// 7. Ternary operator (a ? b : c)

@@ -43,11 +43,28 @@ Variables
     var, let, const
     Hoisting
 */
+// 0. Variables
+/* 
+
+*/
 
 
 
-            //**************************************//
-            //                                      //
-            //              Variables               //
-            //                                      //
-            //**************************************//
+// 1. Declaration
+/* 
+ 
+*/
+var foo
+console.log(foo) // prints => undefined
+
+// 2. Asignment
+/*   
+
+*/
+foo = 'bar'
+console.log(foo) // prints => bar
+
+// 3. Re-assignment
+/*
+
+*/
