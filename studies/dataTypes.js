@@ -21,19 +21,13 @@ c. They are copied by value and are neither
  */
 
 console.log(typeof 'Foobar');   // prints => string
-    
 console.log(typeof 3);  // prints => number
-    
 console.log(typeof true);   // prints =>  boolean
-    
 console.log(typeof undefined);  // prints => undefined
-    
 console.log(typeof NaN);    // prints => number
-    
 console.log(typeof null);   // prints => object
-/* Where the null datatype returns as an object
-but null is a simple datatype. */   
-                                                
+/* Where the null datatype returns as an object but null
+ is a simple datatype. */   
 console.log(typeof 12n);    // prints => bigint
 
 
@@ -49,31 +43,48 @@ var arr = ['This', 'Is', 'An', 'Array'];
 var obj = {1:'This', 2:'is', 3:'an', 4:'object'};
 console.log(typeof obj, typeof arr);         // print => object object
 // Array will prints object it is in fact an array.
-
-function aFunction(){return "this is a function";}
-console.log(typeof aFunction());    // print => function
+console.log(typeof function myfunc(){});    // print => function
 
 
 
 // 3. Strings
 /* 
-a.Stirings are  
+a. Strings are textual variable types.
+b. Can still contain numerical values but can not apply mathmatical
+    operations to iteams in a string
+c. The characters are indexed starting at 0 and go on from there
+d. Strings are incapsulated in qoutes either " " or ' '
 */
 var foo = 'bar';
-console.log(foo); //prints => string
+console.log(foo);   // prints => string
+console.log(foo[1]) // prints => a
+foo = "234";
+console.log(foo);   // prints => 123
+
+
 
 // 4. Numbers
 /*  
-a.
+a. Holds numerical positive or negative values
+b. Can be asigned or reasign with mathmatical operators
+c. Integers can be whole numbers or fractions 
 */
-var foo = 123;
+var foo = 1;
+console.log(foo);    // prints => 1
+var foo = 1 + 1.5;
+console.log(foo);    // prints => 2.5
+
 
 
 // 5. Boolean
 /*   
-a.
+a. Is a binary datatype
+b. Everything with a value will return 'true'
+c. Everything without a value will return 'false'
+d. Is used for comparison operations
 */
-
+console.log(1>2);   // prints => false
+console.log(1<2);   // prints => true
 
 
 // 6. Undefined 
