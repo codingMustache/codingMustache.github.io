@@ -66,76 +66,74 @@ console.log(typeof aFunction());
         //~~~~~Strings~~~~~\\
 /*
 ipsom lorem
-*\
+*/
 
 
 
         //~~~~~Numbers~~~~~\\
 /*
 ipsom lorem
-*\
+*/
 
 
 
         //~~~~~Boolean~~~~~\\
 /*
 ipsom lorem
-*\
+*/
 
 
 
         //~~~~~Undefined~~~~~\\
 /*
 ipsom lorem
-*\
+*/
 
 
 
         //~~~~~NaN~~~~~\\
 /*
 ipsom lorem
-*\
+*/
 
 
 
         //~~~~~Null~~~~~\\
 /*
 ipsom lorem
-*\
+*/
 
 
 
         //~~~~~Array~~~~~\\
 /*
 ipsom lorem
-*\
+*/
 
 
 
         //~~~~~Object~~~~~\\
 /*
 ipsom lorem
-*\
+*/
 
 
 
         //~~~~~Functions~~~~~\\
 /*
 ipsom lorem
-*\
+*/
 
 
 
         //~~~~~Infinity and -Infinity~~~~~\\
 /*
 ipsom lorem
-*\
+*/
 
 
 
         //~~~~~Copied by Reference Vs Copied by Value~~~~~\\
 /*
 ipsom lorem
-*\
-
-
+*/
