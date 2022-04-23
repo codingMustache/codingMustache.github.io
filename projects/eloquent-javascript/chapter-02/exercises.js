@@ -38,10 +38,12 @@ function drawChessboard(size){
     if (i % size === 0) {
       str += '\n';
           if (size % 2 === 1) {
-            space = (space === ' ')? '#': ' ';
+            if (space === ' '){space = '#'}
+            else{space = ' ';}
           }
     } else {
-      space = (space === ' ')? '#': ' ';
+      if(space == ' '){ space = '#'}
+      else{ space = ' ';}
     }
   }
   console.log(str)
