@@ -2,9 +2,18 @@
 
 
 ## How to push files to GitHub
-in terminal   git add -A
-              git commit 'descrip'
-              git push
+In terminal:   
+    $ git commit -a
+        Will iniate the commmit
+    $ git commit -m "<commit message>"
+        Will avoid propmt to add message
+    $ git commit -am "<commit message>"
+        Will skip the staging
+    $ git commit --amend "<commit message>"
+        rewrites the last made commit with the latest staged changes
+    $ git push <remote> <branch-name>
+        to publish the staged commits
+        
 ## How to install
     1. In terminal   code ~/.bashrc
     2. In ./bashrc on line 4 -> export CHE_PROJECTS_ROOT=/workspace
