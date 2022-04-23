@@ -1,4 +1,4 @@
-## How to push files to GitHub
+## GitHub Commands
 ```
 In terminal:   
     $ git commit -a
