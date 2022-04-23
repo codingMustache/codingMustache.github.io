@@ -1,6 +1,3 @@
-# jorge-carvajal.github.io
-
-
 ## How to push files to GitHub
 ```
 In terminal:   
@@ -15,6 +12,7 @@ In terminal:
     $ git push <remote> <branch-name>
         to publish the staged commits
 ```
+
 ## How to install
     1. In terminal   code ~/.bashrc
     2. In ./bashrc on line 4 -> export CHE_PROJECTS_ROOT=/workspace
