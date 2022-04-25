@@ -48,14 +48,12 @@ _.identity = function(value){
 _.typeOf = function(value){
     if (value === null){
         return 'null';
-    } else if(value instanceof Date === true){
-        return 'date';
-    }  else if(Array.isArray(value)){
+    } else if(Array.isArray(value)){
         return 'array';
     } else {
         return typeof value;
     }
-}
+};
 
 /** _.first
 * Arguments:
@@ -74,7 +72,22 @@ _.typeOf = function(value){
 *   _.first(["a", "b", "c"], 1) -> "a"
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
+_.first = function(arr, val){
+    var result = [];
 
+    if (Array.isArray(arr) === false || val < 0){
+        return [];
+    } else if (typeof val !==  'number'){
+        return arr[0];
+    }else if (val > arr.length){
+        return arr;
+    } else {
+        for (let i = 0; i < val; i++){
+            result.push(arr[i]);
+        }   
+    }
+    return result;
+};
 
 /** _.last
 * Arguments:
@@ -93,7 +106,21 @@ _.typeOf = function(value){
 *   _.last(["a", "b", "c"], 1) -> "c"
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
-
+_.last = function(arr, val){
+    var result = [];
+    if (Array.isArray(arr) === false || val < 0){
+        return [];
+    } else if (typeof val !==  'number'){
+        return arr[arr.length - 1];
+    }else if (val > arr.length){
+        return arr;
+    } else {
+        for (let i = arr.length -1; i > 0; i--){
+            result.push(arr[i]);
+        }  
+    }
+    return result.reverse();
+};
 
 /** _.indexOf
 * Arguments:
@@ -110,7 +137,14 @@ _.typeOf = function(value){
 *   _.indexOf(["a","b","c"], "c") -> 2
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
-
+_.indexOf = function(array, value){
+    for(let i = 0; i < array.length; i++){
+        if(value === array[i]){
+            return i;
+        }
+    }
+return -1;
+}
 
 /** _.contains
 * Arguments:
@@ -126,7 +160,9 @@ _.typeOf = function(value){
 * Examples:
 *   _.contains([1,"two", 3.14], "two") -> true
 */
-
+_.contains = function(array, value){
+    
+}
 
 /** _.each
 * Arguments:
