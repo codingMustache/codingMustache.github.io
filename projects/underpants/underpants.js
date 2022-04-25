@@ -22,6 +22,10 @@ var _ = {};
 */
 
 
+_.identity = function(value){
+    return value;
+};
+
 /** _.typeOf
 * Arguments:
 *   1) Any value
@@ -41,7 +45,17 @@ var _ = {};
 * _.typeOf("javascript") -> "string"
 * _.typeOf([1,2,3]) -> "array"
 */
-
+_.typeOf = function(value){
+    if (value === null){
+        return 'null';
+    } else if(value instanceof Date === true){
+        return 'date';
+    }  else if(Array.isArray(value)){
+        return 'array';
+    } else {
+        return typeof value;
+    }
+}
 
 /** _.first
 * Arguments:
