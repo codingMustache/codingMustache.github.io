@@ -2,15 +2,15 @@
 ```
 In terminal:   
     $ git commit -a
-        Will iniate the commmit
+        -Will iniate the commmit
     $ git commit -m "<commit message>"
-        Will avoid propmt to add message
+        -Will avoid propmt to add message
     $ git commit -am "<commit message>"
-        Will skip the staging
+        -Will skip the staging
     $ git commit --amend "<commit message>"
-        rewrites the last made commit with the latest staged changes
+        -Rewrites the last made commit with the latest staged changes
     $ git push <remote> <branch-name>
-        to publish the staged commits
+        -To publish the staged commits
 ```
 
 ## How to install

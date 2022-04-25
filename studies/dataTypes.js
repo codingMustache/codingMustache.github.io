@@ -78,19 +78,31 @@ console.log(foo);    // prints => 2.5
 
 // 5. Boolean
 /*   
-a. Is a binary datatype
+a. Is a binary comparrison datatype
 b. Everything with a value will return 'true'
 c. Everything without a value will return 'false'
 d. Is used for comparison operations
+e. Compasioning 2 object even with the same key and value will be false
 */
 console.log(1>2);   // prints => false
 console.log(1<2);   // prints => true
+var foo = {foo: bar };
+var bar = {foo: bar };
+console.log(foo == bar);  //prints => false
+var foo;
+console.log(foo === undefined); //prints => true
+
 
 
 // 6. Undefined 
 /* 
-a.
+a. Is an empty value
+b. The defualt value if an initiated variable
+c. If the variable is not declared the value undefined will be given
 */
+var foo;
+console.log(foo);   // prints => undefined
+console.log(foo === undefined); //prints => true
 
 
 
