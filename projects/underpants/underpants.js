@@ -186,7 +186,6 @@ _.contains = function(array, value){
 */
 _.each = function(collect, func){
     if (Array.isArray(collect)){
-       
         for(let i = 0; i < collect.length; i++){
             func(collect[i], i, collect);
         }
@@ -316,7 +315,7 @@ _.partition = function(array, func){
 */
 _.map = function(collect, func){
     var output = [];
-    if(Array.isArray(collect) === true){
+    if(Array.isArray(collect)){
         for(let i = 0; i < collect.length; i++){
             output.push(func(collect[i], i, collect))
         }
@@ -338,13 +337,10 @@ return output;
 * Examples:
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
-_.pluck = function(arr, prop){
-        _.map(arr[i], function(prop){
-        for(let key in arr[i]){
-            
-        }
-        }
-    }
+_.pluck = function(array, prop){
+    return _.map(array, function(element){
+        return element[prop];
+    });
 }
 
 /** _.every
@@ -367,7 +363,30 @@ _.pluck = function(arr, prop){
 *   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
-
+_.every = function(collect, func){
+    if(typeof func !== 'function'){
+        for(let i = 0; i < collect.length; i++) {
+            if(collect[i] === false){ 
+                return false 
+            } 
+        }
+        return true;
+    } else if (Array.isArray(collect)){
+        for(let i = 0; i < collect.length; i++) {
+            if(func(collect[i], i, collect) !== true){
+                return false
+            }
+        }
+        return true;
+    }else{
+        for(let key in collect){
+            if(func(collect[key], key, collect) === false){
+                return false;
+            }
+        }
+        return true;
+    }
+}
 
 /** _.some
 * Arguments:
@@ -389,7 +408,30 @@ _.pluck = function(arr, prop){
 *   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
-
+_.some = function(collect, func){
+    if(typeof func !== 'function'){
+        for(let i = 0; i < collect.length; i++) {
+            if(collect[i] === true){ 
+                return true 
+            } 
+        }
+        return false;
+    } else if (Array.isArray(collect)){
+        for(let i = 0; i < collect.length; i++) {
+            if(func(collect[i], i, collect) === true){
+                return true;
+            }
+        }
+        return false;
+    }else{
+        for(let key in collect){
+            if(func(collect[key], key, collect) === true){
+                return true;
+            }
+        }
+        return false;
+    }
+}
 
 /** _.reduce
 * Arguments:
@@ -409,7 +451,9 @@ _.pluck = function(arr, prop){
 * Examples:
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
-
+_.reduce = function(array, func, seed){
+    
+}
 
 /** _.extend
 * Arguments:
@@ -425,7 +469,12 @@ _.pluck = function(arr, prop){
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
-
+_.extend = function(){
+    for(let i = 1; i < arguments.length; i++){
+        Object.assign(arguments[0], arguments[i]);
+    }
+    return arguments[0];
+}
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
