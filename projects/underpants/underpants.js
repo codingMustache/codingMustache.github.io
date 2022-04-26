@@ -431,7 +431,8 @@ _.some = function(collect, func){
         }
         return false;
     }
-}
+    
+};
 
 /** _.reduce
 * Arguments:
@@ -452,8 +453,15 @@ _.some = function(collect, func){
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 _.reduce = function(array, func, seed){
-    
-}
+    _.each(array, function(val, i, collect){
+       if (seed === undefined || seed === null){
+           seed = val;
+       }else {
+           seed = func(seed, val, i, collect);
+       }
+   });
+   return seed;
+};
 
 /** _.extend
 * Arguments:
