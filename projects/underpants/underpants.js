@@ -161,7 +161,12 @@ return -1;
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 _.contains = function(array, value){
-    
+    for(let i = 0; i < array.length; i++){
+        if(array[i]=== value){
+            return true;
+        }
+    }
+    return false;
 }
 
 /** _.each
@@ -179,7 +184,18 @@ _.contains = function(array, value){
 *   _.each(["a","b","c"], function(e,i,a){ console.log(e)});
 *      -> should log "a" "b" "c" to the console
 */
-
+_.each = function(collect, func){
+    if (Array.isArray(collect)){
+       
+        for(let i = 0; i < collect.length; i++){
+            func(collect[i], i, collect);
+        }
+    }else{
+        for(var key in collect){
+            func(collect[key], key, collect);
+        }
+    }
+}
 
 /** _.unique
 * Arguments:
@@ -190,7 +206,15 @@ _.contains = function(array, value){
 * Examples:
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
-
+_.unique = function(array){
+    var result = [];
+    for(let i = 0; i < array.length; i++){
+        if (_.indexOf(array, array[i]) === i) {
+            result.push(array[i]);
+        }
+    }
+    return result;
+}
 
 /** _.filter
 * Arguments:
@@ -207,6 +231,15 @@ _.contains = function(array, value){
 * Extra Credit:
 *   use _.each in your implementation
 */
+_.filter = function(array, func){
+    var output = [];
+    for(let i = 0; i < array.length; i++){
+        if (func(array[i], i, array) === true){
+            output.push(array[i]);
+        }
+    } 
+    return output;
+}
 
 
 /** _.reject
@@ -221,7 +254,15 @@ _.contains = function(array, value){
 * Examples:
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
-
+_.reject = function(array, func){
+    var output = [];
+    for(let i = 0; i < array.length; i++){
+        if (func(array[i], i, array) === false){
+            output.push(array[i]);
+        }
+    } 
+    return output;
+}
 
 /** _.partition
 * Arguments:
@@ -241,6 +282,21 @@ _.contains = function(array, value){
 *   }); -> [[2,4],[1,3,5]]
 }
 */
+_.partition = function(array, func){
+    let output = [];
+    var truthy = [];
+    var falsy = [];
+    for(let i = 0; i < array.length; i++){
+        if(func(array[i], i, array)){
+           truthy.push(array[i]);
+        } else if(!func(array[i], i, array)){
+            falsy.push(array[i]);
+        }
+    }
+    output.push(truthy);
+    output.push(falsy);
+    return output;
+}
 
 
 /** _.map
@@ -258,7 +314,19 @@ _.contains = function(array, value){
 * Examples:
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
-
+_.map = function(collect, func){
+    var output = [];
+    if(Array.isArray(collect) === true){
+        for(let i = 0; i < collect.length; i++){
+            output.push(func(collect[i], i, collect))
+        }
+    } else {
+        for(let key in collect){
+            output.push(func(collect[key],key, collect));
+        }
+    }
+return output;
+}
 
 /** _.pluck
 * Arguments:
@@ -270,7 +338,14 @@ _.contains = function(array, value){
 * Examples:
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
-
+_.pluck = function(arr, prop){
+        _.map(arr[i], function(prop){
+        for(let key in arr[i]){
+            
+        }
+        }
+    }
+}
 
 /** _.every
 * Arguments:
