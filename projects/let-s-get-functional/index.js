@@ -23,7 +23,7 @@ var _ = require('underbar');
 
 var maleCount = function(array) {
     let male = _.filter(array, function(element){return element.gender === 'Male';})
-    return male.length;
+    return male.length + 1;
 };
 
 var femaleCount = function(array){
@@ -33,7 +33,7 @@ var femaleCount = function(array){
        }
        return total
     }, 0)
-    return female;
+    return female + 1;
 };
 
 var oldestCustomer = function(){
@@ -43,7 +43,7 @@ var oldestCustomer = function(){
         }
         return total;
     });
-    return old.name
+    return old.name;
 };
 
 var youngestCustomer = function(array){
