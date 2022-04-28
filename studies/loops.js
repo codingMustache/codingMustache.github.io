@@ -30,7 +30,10 @@ console.log(text) // prints => 1 2 3
  
 */          
 ////     Be able to loop any number of times, forward counting up to some limit, backward counting down to 0
-
+var x = "cat"       // prints =>    cat
+for(var i in x){    //              cat
+  console.log(x)    //              cat
+}                   
 
 
 // 4. Looping Over Array
