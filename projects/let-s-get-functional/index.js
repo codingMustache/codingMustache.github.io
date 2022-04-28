@@ -29,7 +29,7 @@ var maleCount = function(array) {
             return false;
         }
         });
-          return males;
+    return males.length;
 };
 
 var femaleCount = function(array){
@@ -42,15 +42,15 @@ var femaleCount = function(array){
     return numFemales;
 };
 
-var oldestCustomer = function(){
-    let oldest = _.reduce(array, function(accumulator, current, index, collection) {
+var oldestCustomer = function(array){
+    let oldest = _.reduce(array, function(accumulator, current, index, collection) {    
         if (current.age > accumulator.age) {
-        accumulator = current;
+            accumulator = current;
         }
-        return accumulator;
+            return accumulator;
         }) 
-        return oldest.name;
-        }
+    return oldest.name;
+}
 
 var youngestCustomer = function(array){
     let young = _.reduce(array, function(total, curr){
