@@ -38,7 +38,7 @@ var femaleCount = function(array){
 
 var oldestCustomer = function(){
     let old = _.reduce(array, function(total, curr){
-        if(curr.age < total.age){
+        if(curr.age > total.age){
             total = curr;
         }
         return total;
@@ -57,7 +57,7 @@ var youngestCustomer = function(array){
 };
 
 var averageBalance = function(){
-
+    
 };
 
 var firstLetterCount = function(){
