@@ -22,29 +22,35 @@ var _ = require('underbar');
  */
 
 var maleCount = function(array) {
-    let male = _.filter(array, function(element){return element.gender === 'Male';})
-    return male.length + 1;
+    let males = _.filter(array, function(element) {
+        if (element.gender === 'male') {
+            return true;
+        } else {
+            return false;
+        }
+        });
+          return males;
 };
 
 var femaleCount = function(array){
-    let female = _.reduce(array, function(total, curr){
-       if (curr.gender === 'Felmale'){
-        total++;
-       }
-       return total
+    let numFemales = _.reduce (array, function(accumulator, current, index, collection) {
+        if (current.gender === 'female') {
+            accumulator += 1;
+        }
+    return accumulator;
     }, 0)
-    return female + 1;
+    return numFemales;
 };
 
 var oldestCustomer = function(){
-    let old = _.reduce(array, function(total, curr){
-        if(curr.age > total.age){
-            total = curr;
+    let oldest = _.reduce(array, function(accumulator, current, index, collection) {
+        if (current.age > accumulator.age) {
+        accumulator = current;
         }
-        return total;
-    });
-    return old.name;
-};
+        return accumulator;
+        }) 
+        return oldest.name;
+        }
 
 var youngestCustomer = function(array){
     let young = _.reduce(array, function(total, curr){
