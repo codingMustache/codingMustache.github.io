@@ -22,26 +22,57 @@ var _ = require('underbar');
  */
 
 var maleCount = function(array) {
+    let male = _.filter(array, function(element){return element.gender === 'Male';})
+    return male.length;
+};
+
+var femaleCount = function(array){
+    let female = _.reduce(array, function(total, curr){
+       if (curr.gender === 'Felmale'){
+        total++;
+       }
+       return total
+    }, 0)
+    return female;
+};
+
+var oldestCustomer = function(){
 
 };
 
-var femaleCount;
+var youngestCustomer = function(array){
+    let oldest = ._reduce(array, function(total, curr){
+        if(curr.age > total.age){
+            total = curr;
+        }
+        return total;
+    });
+    return oldest.name
+};
 
-var oldestCustomer;
+var averageBalance = function(){
 
-var youngestCustomer;
+};
 
-var averageBalance;
+var firstLetterCount = function(){
 
-var firstLetterCount;
+};
 
-var friendFirstLetterCount;
+var friendFirstLetterCount = function(){
 
-var friendsCount;
+};
 
-var topThreeTags;
+var friendsCount = function(){
 
-var genderCount;
+};
+
+var topThreeTags = function(){
+
+};
+
+var genderCount = function(){
+
+};
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
