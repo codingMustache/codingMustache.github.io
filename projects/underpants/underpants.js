@@ -72,18 +72,17 @@ _.typeOf = function(value){
 *   _.first(["a", "b", "c"], 1) -> "a"
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
-_.first = function(arr, val){
+_.first = function(array, value){
     var result = [];
-
-    if (Array.isArray(arr) === false || val < 0){
+    if (Array.isArray(array) === false || value < 0){
         return [];
-    } else if (typeof val !==  'number'){
-        return arr[0];
-    }else if (val > arr.length){
-        return arr;
+    } else if (typeof value !==  'number'){
+        return array[0];
+    }else if (value > array.length){
+        return array;
     } else {
-        for (let i = 0; i < val; i++){
-            result.push(arr[i]);
+        for (let i = 0; i < value; i++){
+            result.push(array[i]);
         }   
     }
     return result;
@@ -233,7 +232,7 @@ _.unique = function(array){
 _.filter = function(array, func){
     var output = [];
     for(let i = 0; i < array.length; i++){
-        if (func(array[i], i, array) === true){
+        if (func(array[i], i, array)){
             output.push(array[i]);
         }
     } 
@@ -431,7 +430,6 @@ _.some = function(collect, func){
         }
         return false;
     }
-    
 };
 
 /** _.reduce
@@ -453,14 +451,17 @@ _.some = function(collect, func){
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 _.reduce = function(array, func, seed){
-    _.each(array, function(val, i, collect){
-       if (seed === undefined || seed === null){
-           seed = val;
-       }else {
-           seed = func(seed, val, i, collect);
-       }
-   });
-   return seed;
+    if (seed === undefined){
+        seed = array[0];
+        for(let i = 1; i < array.length; i++){
+            seed = func(seed, array[i], i, array);
+        }
+    } else {
+        for(let i = 0; i < array.length; i++){
+            seed = func(seed, array[i], i, array);
+        }
+    }
+    return seed;
 };
 
 /** _.extend
