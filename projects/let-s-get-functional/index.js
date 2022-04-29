@@ -63,21 +63,32 @@ var youngestCustomer = function(array){
 };
 
 var averageBalance = function(array){
-    var avg = _.reduce(array, (total, curr) => total =+ Number(curr.balance.replace(/[^0-9.-]+/g,"")), 0)
-    return avg/array.length;
+//    var avg = _.filter(array, function(element){
+//        return Number(curr.balance.replace(/[$,]+/g,""))
+//    }
 };
 
-var firstLetterCount = function(){
+var firstLetterCount = function(array, letter){
+    let firstLetter = _.filter(array, function(element) {
+        return element.balance[0].toUpperCase() === letter.toUpperCase()
+      })
+      return firstLetter.length
+};
+
+var friendFirstLetterCount = function(array, customer, leter){
 
 };
 
-var friendFirstLetterCount = function(){
-
-};
-
-var friendsCount = function(){
-
-};
+var friendsCount = function(array, names){
+    var FC = _.filter(array, function(element){
+        if(names === element.name){
+          for(var key in element.friends){
+            return element.friends[key].name
+          }
+        }
+    })
+      return FC
+}
 
 var topThreeTags = function(){
 
