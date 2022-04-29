@@ -91,10 +91,10 @@ var friendsCount = function(array, names){
           }
         }
     })
-      return FC
+    return FC
 }
 
-var topThreeTags = function(){
+var topThreeTags = function(array){
 
 };
 
