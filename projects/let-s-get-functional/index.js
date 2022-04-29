@@ -63,10 +63,10 @@ var youngestCustomer = function(array){
 };
 
 var averageBalance = function(array){
-//    var avg = _.filter(array, function(element){
-//        return Number(curr.balance.replace(/[$,]+/g,""))
-//    }
-};
+    var avg = _.filter(array, function(element){
+        return Number(curr.balance.replace(/[$,]+/g,""))
+    })
+}
 
 var firstLetterCount = function(array, letter){
     let firstLetter = _.filter(array, function(element) {
