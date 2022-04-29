@@ -80,7 +80,16 @@ var firstLetterCount = function(array, letter){
 };
 
 var friendFirstLetterCount = function(array, customer, leter){
-
+    var z = 0;
+    let namez = _.filter(array, function(element) {
+      return element.name === customer
+    })
+    _.map(namez[0].friends, function(e){
+      if(e.name[0].toUpperCase() === letter.toUpperCase()){
+        z++
+      }
+    })      
+    return z
 };
 
 var friendsCount = function(array, names){
