@@ -66,8 +66,8 @@ var averageBalance = function(array){
     var all = _.map(array, function(element){
         return Number(element.balance.replace(/[^0-9.-]+/g,""));
     })
-  var toat = _.reduce(all, function(x, y){
-    return x + y}, 0)
+    var toat = _.reduce(all, function(x, y){
+        return x + y}, 0)
   var avg = toat/all.length
   return avg;
 }
