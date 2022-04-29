@@ -63,19 +63,18 @@ var youngestCustomer = function(array){
 };
 
 var averageBalance = function(array){
-    var all = map(array, function(element){
+    var all = _.map(array, function(element){
         return Number(element.balance.replace(/[^0-9.-]+/g,""));
     })
-  var toat = reduce(all, function(x, y){
+  var toat = _.reduce(all, function(x, y){
     return x + y}, 0)
-  console.log(all)
   var avg = toat/all.length
-  return avg.toFixed(2)
+  return avg;
 }
 
 var firstLetterCount = function(array, letter){
     let firstLetter = _.filter(array, function(element) {
-        return element.name.toUpperCase() === letter.toUpperCase()
+        return element.name[0].toUpperCase() === letter.toUpperCase()
       })
       return firstLetter.length
 };
