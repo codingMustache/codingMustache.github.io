@@ -93,14 +93,26 @@ var friendFirstLetterCount = function(array, customer, leter){
 };
 
 var friendsCount = function(array, names){
-    var FC = _.filter(array, function(element){
-        if(names === element.name){
-          for(var key in element.friends){
-            return element.friends[key].name
-          }
-        }
+    var result = [];
+    var friendI = [];
+    let namez = _.map(array, function(e){
+      return e.friends
     })
-    return FC
+    let arr = _.map(namez, function(e){
+      return e 
+    })
+    for(var i = 0; i < arr.length; i++){
+      for(var j = 0; j < arr[i].length; j++){
+        if(arr[i][j].name === pName){
+          friendI.push(i);
+        }
+      }
+    }
+    for(var h = 0; h < friendI.length; h++){
+      let ind = friendI[h]
+      result.push(array[ind].name)
+    }
+    return result;
 }
 
 var topThreeTags = function(array){
