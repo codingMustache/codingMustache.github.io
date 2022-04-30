@@ -115,35 +115,46 @@ var friendsCount = function(array, pName){
     return result;
 }
 
-var topThreeTags = function(array){
-
+var topThreeTags = function(array) {
+    var myArray = [];
+    var topTags = [];
+    
+    
+    var tags = _.pluck(array, "tags");
+    
+    var allTags = _.reduce(tags, function(acc, currTag) {
+        return acc.concat(currTag);
+    }).sort();
+    
+    var total = allTags.reduce(function(count, tag) {
+        count[tag] ? count[tag] = count[tag] + 1 : count[tag] = 1;
+        return count;
+    }, {});
+    
+   for(var key in total){
+       myArray.push([key, total[key]]);
+   }
+   var top = myArray.sort(function(acc, currTag) {
+       return currTag[1] - acc[1];
+   }).slice(0, 3);
+   
+   
+   _.filter(top, function(topTagArr) {
+       return topTagArr[0] ? topTags.push(topTagArr[0]) : null;
+   });
+   return topTags;
 };
 
 var genderCount = function(array){
-    var result ={}
-    let nb = _.reduce(array, function(a, c){
-      if(c.gender === 'non-binary'){
-        a++;
-      }
-      return a;
-      }, 0)
-    let f = _.reduce(array, function(a, c){
-      if(c.gender === 'female'){
-        a++;
-      }
-      return a;
-      }, 0)
-    let m = _.reduce(array, function(a, c){
-      if(c.gender === 'male'){
-        a++;
-      }
-      return a;
-      }, 0)
-    result['male'] = m;
-    result['female'] = f; 
-    result['non-binary'] = nb;
-   
-    return result;
+    var genCountObj = _.reduce(array, function(resultObj, customerObj) {
+        if(resultObj[customerObj.gender]) {
+            resultObj[customerObj.gender] += 1;
+        } else {
+            resultObj[customerObj.gender] = 1;
+        }
+        return resultObj
+    },{});
+    return genCountObj;
   }
 
 //////////////////////////////////////////////////////////////////////
