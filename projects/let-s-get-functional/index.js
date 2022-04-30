@@ -120,8 +120,31 @@ var topThreeTags = function(array){
 };
 
 var genderCount = function(){
-
-};
+    var result ={}
+    let nb = reduce(array, function(a, c){
+      if(c.gender === 'non-binary'){
+        a++;
+      }
+      return a;
+      }, 0)
+    let f = reduce(array, function(a, c){
+      if(c.gender === 'female'){
+        a++;
+      }
+      return a;
+      }, 0)
+    let m = reduce(array, function(a, c){
+      if(c.gender === 'male'){
+        a++;
+      }
+      return a;
+      }, 0)
+    result['male'] = m;
+    result['female'] = f; 
+    result['non-binary'] = nb;
+   
+    return result;
+  }
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
