@@ -79,7 +79,7 @@ var firstLetterCount = function(array, letter){
       return firstLetter.length
 };
 
-var friendFirstLetterCount = function(array, customer, leter){
+var friendFirstLetterCount = function(array, customer, letter){
     var z = 0;
     let namez = _.filter(array, function(element) {
       return element.name === customer
