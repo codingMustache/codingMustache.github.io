@@ -92,7 +92,7 @@ var friendFirstLetterCount = function(array, customer, leter){
     return z
 };
 
-var friendsCount = function(array, names){
+var friendsCount = function(array, pName){
     var result = [];
     var friendI = [];
     let namez = _.map(array, function(e){
