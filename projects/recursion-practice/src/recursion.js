@@ -4,33 +4,94 @@
 // denoted by n!, is the product of all positive integers less than or equal to n.
 // Example:  5! = 5 x 4 x 3 x 2 x 1 = 120
 // factorial(5);  // 120
-var factorial = function(n) {
-};
+var factorial = function(n, total = 1) {
+  if (n < 0){
+    return null;
+  } else if (n === 0){
+    return 1;
+  } else if (n === 2){
+    total *= 2;
+    return total;
+  }
+  total *= n
+  n--;
+  return factorial(n, total);
+  };
+  
+    
 
 // 2. Compute the sum of an array of integers.
 // Example:  sum([1, 2, 3, 4, 5, 6]);  // 21
 var sum = function(array) {
+  if (array.length === 0) {
+    return 0;
+  }
+    return array[0] + sum(array.slice(1)); 
 };
 
 // 3. Sum all numbers in an array containing nested arrays.
 // Example: arraySum([1,[2,3],[[4]],5]); // 15
 var arraySum = function(array) {
+
 };
 
 // 4. Check if a number is even.
 var isEven = function(n) {
+  if(n === 1){
+    return false
+  } else if ( n === 0){
+    return true
+  }
+  if(n < 0){
+  return isEven(n+2)
+  }else{
+    return isEven(n-2)
+  }
 };
+
 
 // 5. Sum all integers below a given integer.
 // sumBelow(10); // 45
 // sumBelow(7); // 21
-var sumBelow = function(n) {
-};
+var sumBelow = function(n, sum=0) {
+  //base case
+  if(n === 0){
+    return sum;
+  }
+  
+  //recursion
+  if(n < 0){
+    n++
+    sum += n;
+    return sumBelow(n, sum);
+  } else {
+  n--
+  sum += n;
+  return sumBelow(n, sum);
+    }
+  };
 
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
-var range = function(x, y) {
-};
+var range = function(x, y, output = []) {
+  if (x > y && x - 1 === y){
+    return output
+  } else if(x < y && x + 1 === y){
+    return output
+  } else if(x === y){
+    return output;
+  }
+    if(x < y){
+      x++
+      output.push(x)
+      return range(x, y, output)
+    } else if (x > y) {
+      x--;
+      output.push(x)
+      return range(x, y, output)
+    }
+    
+  }
 
 // 7. Compute the exponent of a number.
 // The exponent of a number says how many times the base number is used as a factor.
@@ -38,6 +99,14 @@ var range = function(x, y) {
 // Example:  exponent(4,3);  // 64
 // https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/computing-powers-of-a-number
 var exponent = function(base, exp) {
+  if (exp === 0) {
+    return 1;
+  }
+  if (exp > 0) {
+    return base * exponent(base, exp - 1);
+  } else if ( exp < 0) {
+    return 1 / (base * exponent(base, -exp -1));
+  }
 };
 
 // 8. Determine if a number is a power of two.
@@ -45,14 +114,26 @@ var exponent = function(base, exp) {
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
-};
+  if (n === 1){
+    return true;
+  } else if(n < 1){
+    return false
+  }
+  return powerOfTwo(n/=2)
+}
 
 // 9. Write a function that accepts a string a reverses it.
 var reverse = function(string) {
-};
+    if (string.length === 0) {
+      return "";
+    }
+    //recursion
+    return reverse(string.substr(1)) + string.charAt(0);
+  };
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
+  
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the
