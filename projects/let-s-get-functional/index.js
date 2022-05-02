@@ -126,7 +126,7 @@ var topThreeTags = function(array) {
         return acc.concat(currTag);
     }).sort();
     
-    var total = allTags.reduce(function(count, tag) {
+    var total = _.reduce(allTags, function(count, tag) {
         count[tag] ? count[tag] = count[tag] + 1 : count[tag] = 1;
         return count;
     }, {});
