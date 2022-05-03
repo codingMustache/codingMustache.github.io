@@ -6,17 +6,12 @@
 * can CHANGE the value (and type of value) to which they point.
  */
 
-
-
 // 1. Declaration
 /**
- * 
- * 
  * 
  */
 var foo
 console.log(foo) // prints => undefined
-
 
 
 // 2. Asignment
@@ -25,7 +20,6 @@ console.log(foo) // prints => undefined
  */
 foo = 'bar'
 console.log(foo) // prints => bar
-
 
 
 // 3. Re-assignment
@@ -46,6 +40,7 @@ console.log(bar)    // prints => FooFoo
 var vari = "This is var"
 let letbe = "This is let"
 const PERM = 'This is CONST'
+
 
 // 5. Hoisting
 /**
