@@ -108,9 +108,12 @@ console.log(foo === undefined); //prints => true
 
 // 7. NaN
 /* 
-a. 
+a. NaN stands for Not a Number
+b. It is number that is not a legal number
+c,
 */
-
+var x = NaN
+console.log(typeof x)       //prints => Number
 
 
 // 8. Null
@@ -124,28 +127,36 @@ a.
 /* 
 a. 
 */
-
-
+var arr = [1, 2, 3, 4]
+// index   0  1  2  3
+console.log(Array.isArray(arr))      // prints => True
 
 // 10. BigInt
 /* 
 a. 
 */
-
+var bInt = 1n;
+console.log(typeof num)     // prints => bigint
 
 
 // 11. Object
 /* 
  
 */
-
+var obj = {
+    a: 1,
+    b: 2
+}
 
 
 // 12. Functions
 /* 
  
 */
-
+function func(){
+    console.log('This is a function')
+}
+func()              // prints => 'This is a function'
 
 
 // 13. Infinity and -Infinity
@@ -154,9 +165,8 @@ a. As it prints number infinity and negative infinity is a global
     scope object.
 */
 console.log(typeof Infinity, typeof -Infinity)  //prints => number number
- /*
-
- */  
+var num = 144;
+console.log(num**num) // prints => Infinty
 
 
 

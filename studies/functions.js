@@ -20,8 +20,8 @@
 */
 /////   What’s the difference between a function’s parameters and 
         /////   arguments PASSED to a function?
-        
-        
+function func(x){x} // <---- Paramter    
+func(x) //<---Argument
         
 // 3. Named Functions
 /* 
