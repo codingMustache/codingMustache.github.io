@@ -1,70 +1,53 @@
-/*
-* VARIABLES:
-*
+// 0. Variables
+/**
 * 0. To hold things in memory during the life-cycle of a program, we can use variables.  Variables
 * are named identifiers that can point to values of a particular type, like a Number, String,
 * Boolean, Array, Object or another data-type.  Variables are called so because once created, we
 * can CHANGE the value (and type of value) to which they point.
-*
-* 1. To create a variable we use the keyword, var, followed by a name (id or alias) for our
-* variable.
-*
-* 2. There are 2 phases of using variables: declaration and initialization (or assignment).
-*/
-
-// 1. declaration //
-var myName;
-
-/*
-* At the declaration phase, the variable myName is undefined because we have NOT initialized
-* it to anything
-*/
-console.log(myName); // prints => undefined
-
-// 2. initialization or assignment //
-myName = 'john';
-console.log(myName); // prints => john
-
-// 3. re-assignment //
-myName = 'bob';
-console.log(myName); // prints => bob
-
-// NOTE: We can assign and re-assign anything to a variable - we cannot do this with constants //
-var myVariable = 1;
-var myVariable = true;
-myVariable = "someString";
-
-
-
-//delete this when done
-/*
-Variables
-    Declaration and assignment
-    var, let, const
-    Hoisting
-*/
-// 0. Variables
-/* 
-
-*/
+ */
 
 
 
 // 1. Declaration
-/* 
- 
-*/
+/**
+ * 
+ * 
+ * 
+ */
 var foo
 console.log(foo) // prints => undefined
 
-// 2. Asignment
-/*   
 
-*/
+
+// 2. Asignment
+/**
+ * 
+ */
 foo = 'bar'
 console.log(foo) // prints => bar
 
-// 3. Re-assignment
-/*
 
+
+// 3. Re-assignment
+/**
+ * 
+ */
+var bar  = 'foo';
+console.log(bar)    // prints => foo
+bar = 'FooFoo'
+console.log(bar)    // prints => FooFoo
+
+
+// 4. Var vs Let vs Const
+/** 
+ * 
+ * 
 */
+var vari = "This is var"
+let letbe = "This is let"
+const PERM = 'This is CONST'
+
+// 5. Hoisting
+/**
+ * 
+ */
