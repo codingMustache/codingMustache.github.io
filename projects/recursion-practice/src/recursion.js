@@ -132,8 +132,15 @@ var reverse = function(string) {
   };
 
 // 10. Write a function that determines if a string is a palindrome.
-var palindrome = function(string) {
-
+var palindrome = function(string, output) {
+  if( string.length === 1){
+    return true;
+  }
+    if(string[0].toLowerCase() === string[string.length - 1].toLowerCase()){
+      return palindrome(string.slice(1, -1).trim())
+    }else {
+      return false;
+    }
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the
@@ -148,6 +155,13 @@ var modulo = function(x, y) {
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
 var multiply = function(x, y) {
+  if (y === 0){
+    return 0;
+  }
+  if (y < 0) {
+    return -x + multiply(x, y + 1)
+  }
+  return x + multiply(x, y - 1)
 };
 
 // 13. Write a function that divides two numbers without using the / operator  or
@@ -169,32 +183,69 @@ var gcd = function(x, y) {
 // compareStr('', '') // true
 // compareStr('tomato', 'tomato') // true
 var compareStr = function(str1, str2) {
+  if( str1.length === 0 && str2.length === 0){
+    return true;
+  }
+    if(str1[0] === str2[0]){
+      return compareStr(str1.slice(1), str2.slice(1))
+    } else {
+      return false;
+    }
 };
 
 // 16. Write a function that accepts a string and creates an array where each letter
 // occupies an index of the array.
-var createArray = function(str){
+var createArray = function(str, output = []){
+  if(str.length === 0){
+    return output;
+  }
+  output.push(str[0])
+  return createArray(str.slice(1), output)
 };
 
 // 17. Reverse the order of an array
-var reverseArr = function (array) {
+var reverseArr = function (array, output = []) {
+  if (array.length === 0){
+    return output;
+  }
+  output.push(array[array.length -1]);
+  return reverseArr(array.slice(0, -1), output)
 };
 
 // 18. Create a new array with a given value and length.
 // buildList(0,5) // [0,0,0,0,0]
 // buildList(7,3) // [7,7,7]
-var buildList = function(value, length) {
+var buildList = function(value, length, output = []) {
+if( length === 0){
+  return output;
+}
+output.push(value)
+length--
+return buildList(value, length, output)
 };
 
 // 19. Count the occurence of a value inside a list.
 // countOccurrence([2,7,4,4,1,4], 4) // 3
 // countOccurrence([2,'banana',4,4,1,'banana'], 'banana') // 2
-var countOccurrence = function(array, value) {
+var countOccurrence = function(array, value, output = []) {
+  if(array.length === 0){
+    return output.length
+  }
+  if(array[0] === value){
+    output.push(array[0])
+  }
+  return countOccurrence(array.slice(1), value, output)
 };
 
 // 20. Write a recursive version of map.
 // rMap([1,2,3], timesTwo); // [2,4,6]
-var rMap = function(array, callback) {
+var rMap = function(array, callback, output = []) {
+if (array.length === 0){
+  return output;
+}
+  output.push(callback(array[0]))
+  return rMap(array.slice(1), callback, output)
+
 };
 
 // 21. Write a function that counts the number of times a key occurs in an object.
@@ -229,18 +280,38 @@ var fibonacci = function(n) {
 // nthFibo(5); // 5
 // nthFibo(7); // 13
 // nthFibo(3); // 2
-var nthFibo = function(n) {
+var nthFibo = function(n, res = []) {
+  if(n < 0){
+    return null;
+  }
+  if(n === 1){
+    return 0;
+  }
+  if (n === 2){
+    return 1;
+  }
+  return nthFibo(n - 1) + nthFibo(n - 2);
 };
 
 // 26. Given an array of words, return a new array containing each word capitalized.
 // var words = ['i', 'am', 'learning', 'recursion'];
 // capitalizedWords(words); // ['I', 'AM', 'LEARNING', 'RECURSION']
-var capitalizeWords = function(input) {
+var capitalizeWords = function(input, output = []) {
+  if(input.length === 0){
+    return output;
+  }
+  output.push(input[0].toUpperCase())
+  return capitalizeWords(input.slice(1), output)
 };
 
 // 27. Given an array of strings, capitalize the first letter of each index.
 // capitalizeFirst(['car', 'poop', 'banana']); // ['Car', 'Poop', 'Banana']
-var capitalizeFirst = function(array) {
+var capitalizeFirst = function(array, output= []) {
+  if(array.length === 0){
+    return output;
+  }
+  output.push(array[0][0].toUpperCase()+array[0].slice(1))
+  return capitalizeFirst(array.slice(1), output)
 };
 
 // 28. Return the sum of all even numbers in an object containing nested objects.
@@ -253,6 +324,7 @@ var capitalizeFirst = function(array) {
 // };
 // nestedEvenSum(obj1); // 10
 var nestedEvenSum = function(obj) {
+
 };
 
 // 29. Flatten an array containing nested arrays.
@@ -263,6 +335,7 @@ var flatten = function(arrays) {
 // 30. Given a string, return an object containing tallies of each letter.
 // letterTally('potato'); // {'p':1, 'o':2, 't':2, 'a':1}
 var letterTally = function(str, obj) {
+  
 };
 
 // 31. Eliminate consecutive duplicates in a list.  If the list contains repeated

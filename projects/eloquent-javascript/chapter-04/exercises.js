@@ -3,12 +3,15 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 function range(start, end, step) {
-  let arr = [];
-  if (step === 'undefined'){ step = 1;}
-  for(let i = start; end >= i; i+=step){
-    arr.push(i)
+  if(step === undefined){
+    step = 1
+  } else if ( i < 0){
+    return [];
   }
-  return arr;
+  while(start <= end){
+
+  }
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////
