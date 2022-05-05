@@ -37,9 +37,9 @@ function drawChessboard(size){
     str += space;
     if (i % size === 0) {
       str += '\n';
-          if (size % 2 === 1) {
-            if (space === ' '){space = '#'}
-            else{space = ' ';}
+        if (size % 2 === 1) {
+          if (space === ' '){space = '#'}
+          else{space = ' ';}
           }
     } else {
       if(space == ' '){ space = '#'}

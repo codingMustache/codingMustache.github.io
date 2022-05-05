@@ -54,12 +54,9 @@ var isEven = function(n) {
 // sumBelow(10); // 45
 // sumBelow(7); // 21
 var sumBelow = function(n, sum=0) {
-  //base case
   if(n === 0){
     return sum;
   }
-  
-  //recursion
   if(n < 0){
     n++
     sum += n;
@@ -280,8 +277,14 @@ var fibonacci = function(n) {
 // nthFibo(5); // 5
 // nthFibo(7); // 13
 // nthFibo(3); // 2
-var nthFibo = function(n, res = []) {
-
+var nthFibo = function(n) {
+  if (n < 0) {
+    return null;
+  }
+  if (n === 1) {
+    return 1;
+  }
+  return nthFibo(n-1) + nthFibo(n-2)
 };
 
 // 26. Given an array of words, return a new array containing each word capitalized.
@@ -344,14 +347,13 @@ var letterTally = function(str, obj = {}) {
 // Example: compress([1, 2, 2, 3, 4, 4, 5, 5, 5]) // [1, 2, 3, 4, 5]
 // Example: compress([1, 2, 2, 3, 4, 4, 2, 5, 5, 5, 4, 4]) // [1, 2, 3, 4, 2, 5, 4]
 var compress = function(list, output=[]) {
-    //base case
   if(list.length === 0){
     return output;
   }
-    //recursion
-    if(list[0] !== list[1]){
-      output.push(list[0])
-    } return compress(list.slice(1), output)
+  if(list[0] !== list[1]){
+    output.push(list[0])
+  } 
+  return compress(list.slice(1), output)
 };
 
 // 32. Augment every element in a list with a new value where each element is an array
