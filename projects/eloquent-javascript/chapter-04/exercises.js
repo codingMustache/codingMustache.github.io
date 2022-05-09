@@ -58,18 +58,18 @@ function reverseArrayInPlace(array) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function arrayToList(array) {
-  if (!array.length) {
-    return {};
-}
-let list = {
-    value: array[0]
-};
-if (array.length == 1) {
-    list.rest = null;
-    return list;
-}
-list.rest = arrayToList(array.slice(1));
-return list;
+    if (!array.length) {
+      return {};
+  }
+  let list = {
+      value: array[0]
+  };
+  if (array.length == 1) {
+      list.rest = null;
+      return list;
+  }
+  list.rest = arrayToList(array.slice(1));
+  return list;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -78,13 +78,13 @@ return list;
 
 function listToArray(list) {
   if (!Object.keys(list).length) {
-    return [];
-}
-let array = [list.value];
-if (list.rest === null) {
-    return array;
-}
-return array.concat(listToArray(list.rest));
+      return [];
+  }
+  let array = [list.value];
+  if (list.rest === null) {
+      return array;
+  }
+  return array.concat(listToArray(list.rest));
 }
 
 ////////////////////////////////////////////////////////////////////////////////
