@@ -76,15 +76,12 @@ function arrayToList(array) {
 // listToArray /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function listToArray(list) {
-  if (!Object.keys(list).length) {
-      return [];
+function listToArray(list, arr=[]){
+  if (list === null) {
+    return arr;
   }
-  let array = [list.value];
-  if (list.rest === null) {
-      return array;
-  }
-  return array.concat(listToArray(list.rest));
+  arr.push(list.value);
+  return listToArray(list.rest, arr);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
