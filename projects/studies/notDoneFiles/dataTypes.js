@@ -140,10 +140,13 @@
 
 // 11. Object
     /* 
-    a.
+    a. Holds a set of data types one being a key the other a value
+    b. Can bare complex or simple datatypes
     */
         var obj = {
+        // V This is a key
             a: 1,
+            // V This is a value
             b: 2
         }
         console.log(typeof obj)                // prints => object
