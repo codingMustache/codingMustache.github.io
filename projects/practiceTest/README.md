@@ -16,7 +16,7 @@ Let's get started!
 3. Oh no! Some of our contestants aren't even dogs!
     Using the native filter method with our `dogs` array, create an array called `filterSpecies` that will filter out all of the species that are not dogs! 
 
-4. For safty purposes, let's create a copy of our array. Using the spread operator, assign a copy of our `filteredSpecies` array to our `dogContestants` variable.
+4. For safty purposes, let's create a copy of our array. Using the spread operator, assign a copy of our `filterSpecies` array to our `dogContestants` variable.
 
 5. Now that we have our `dogContestants` array, we need to add a `class` property to each dog object.
     Using the native map method, add a key of `class` with the value:

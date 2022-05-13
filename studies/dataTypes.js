@@ -142,6 +142,8 @@
     /* 
     a. Holds a set of data types one being a key the other a value
     b. Can bare complex or simple datatypes
+    c. Accessing properties are done by calling the object and either
+        using dot notation (obj.a) or bracket notation (obj['a']).
     */
         var obj = {
         // V This is a key
@@ -153,18 +155,22 @@
 
 // 12. Functions
     /* 
-    a.
+    a. A bloock of code designed to do a task
+    b. The function alone will do nothing unless invoked
+    c. Parameters can be passed into funciton in an inclosed into paraentheses
     */
         function func(){
             console.log('This is a function')
         }
-        func()                              // prints => 'This is a function'
+        func() // <-invocation             // prints => 'This is a function'
 
 
 // 13. Infinity and -Infinity
     /* 
     a. As it prints number infinity and negative infinity is a global 
         scope object.
+    b. Positive infinity is larger than any positive number and likewise 
+        with negative.
     */
         console.log(typeof Infinity, typeof -Infinity)  //prints => number number
         var num = 144;
@@ -175,5 +181,20 @@
 
 // 14. Copied by Reference Vs Copied by Value
     /* 
-    
+    a. Primitive datatypes are copied by value
+    b. Complex datatypes are copied by refernce
+    c. Copied value is a copy of the asigned variable 
+    d. Copying by refernce is like a pointer to the oirginal values 
+    e. Changing a value copied by refeernce will also affect the original variable
     */
+        var a = 3
+        var b = a // < b is now asigned 3
+        b +=3
+        console.log(b) // prints => 6
+        console.log(a) // prints a unchanged => 3
+
+        var x = {a: 1}
+        var y = x   // <= here its copied by reference
+        y.a = 3 // <= changes the key with value of 1 to 3 
+        console.log(y) // prints => {a:3}
+        console.log(x) // printing the original variable x => {a:3}

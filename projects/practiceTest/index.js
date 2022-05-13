@@ -88,34 +88,60 @@ let dogs = [
 ]
 
 // 1.
-var greeting;
+var greeting = function(greeting, location, time){
+    console.log(`${greeting} ${location} ${time}`)
+};
 
 
 
 // 2.
-var contestants;
+var contestants = function(dogs, count = 0){
+if(dogs.length === 0){
+    return count;
+}
+count++
+
+return contestants(dogs.slice(1), count)
+}
 
 
 
 // 3.
-var filterSpecies;
+var filterSpecies  = dogs.filter(justDogs => justDogs.species === 'dog');
+
 
 
 
 // 4. 
-var dogContestants;
-
+var dogContestants = [...filterSpecies];
 
 
 // 5. 
-var dogsWithClasses;
+var dogsWithClasses = dogContestants.map((x) => {
+    if(x.weight <= 10){
+        x.class = 'red'; 
+    } else if (x.weight <= 20){
+        x.class = 'yellow';
+    } else {
+        x.class = 'green';
+    }
+    return x
+});
     
 
 
 // 6.
-var firstInClass;
+var firstInClass = function(array, copy={}){
+    if(array.length === 0){
+        return copy
+    }
+    Object.assign(copy, array[0]);
+    return firstInClass(array.slice(1), copy)
+};
 
 
 
 // 7.
-var votes;
+var votes = dogs.reduce((acc, cur) => {
+        return acc += cur.votes
+     }, 0);
