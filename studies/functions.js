@@ -167,12 +167,21 @@
 
 // 10. Closure
         /* 
-        a.
+        a. Is the combination of a function enclused with reference to the
+                the lexical scope.
+        b. Closure gives you access to the outer scoped funciton from the inner
+        c. If an object is returned from a funciton and it is refernced that
+                closure stays in memory.
+        d. Even after a funtion has returned the parameter is can still be held in memory
         */
-        ////    Closures: Functions form closures around the data 
-        ////    they house. If an object returned from the 
-        ////    Function and is held in memory somewhere (referenced), 
-        ////    that closure stays ALIVE, and data can continue to exist 
-        ////    in these closures! (See: our meeting-room app for an 
-        ////    example!) (ALSO, see: Understanding JavaScript 
-        ////    Closures with Ease)
+        function multiply(x) {
+                return function(y) {
+                        return x * y;
+                };
+        }
+        var multiplyFive = multiply(5); // passes 5 into x
+        var mutiplyTen = multiply(10);  // passes 10 into x
+        console.log(multiplyFive(2));   // prints -> 10
+        console.log(multiplyFive(10));  // prints -> 50
+        console.log(mutiplyTen(20));    // prints -> 200
+        console.log(mutiplyTen(6))      // prints -> 60
