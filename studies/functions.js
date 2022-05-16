@@ -45,7 +45,7 @@
         */
                 function named(p){ // Na
                         // The function body
-                 },
+                 }
 
 // 4. Arrow Function
         /*
@@ -54,12 +54,13 @@
         c. Do not have thier own binding to this, arguements and super
         d. Can not be used as Constructors 
         e. Can use implcit return by removing curly braces
-        */
-                var arrow () => {console.log('Arrow function')}
+       
+                var arrow = function () => {
+                        console.log('Arrow function')};
                 arrow() // prints -> Arrow function
                 var arr1 = x => x + 1
                 arr1(1) // prints -> 2 
-        
+       */ 
 // 5. Anonymous Function
         /*
         a. A anonymous funciton is a functino with no name associated with it.
@@ -112,9 +113,9 @@
                 var msg1 = "am"         // can be accesed outside the function
                 const msg2 = "scope"    // except what is returned from the function
         }
-        console.log(msg)  // prints -> ReferenceError
-        console.log(msg1) // prints -> ReferenceError
-        console.log(msg2) // prints -> ReferenceError
+//        console.log(msg)  // prints -> ReferenceError
+//        console.log(msg1) // prints -> ReferenceError
+//        console.log(msg2) // prints -> ReferenceError
         
         let msg = "outer"
         function scope1(){
@@ -139,9 +140,9 @@
                 let  var2 = "Nope"
                 const var3 = "No way"
         }
-        console.log(vari1) // prints -> hello
-        console.log(var2) // prints-> ReferenceError
-        console.log(var3) // prints-> ReferenceError
+        console.log(var1) // prints -> hello
+//        console.log(var2) // prints-> ReferenceError
+//        console.log(var3) // prints-> ReferenceError
 
         /*
         c. Lexical Scope
