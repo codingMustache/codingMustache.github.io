@@ -28,7 +28,7 @@
   d. Upadte: Defines how to increment or decrement the  iniatial start variable 
   */
     var nums = "";
-    for(let i = 0; i <= 3; i++){
+    for(let i = 0/*Start*/; i <= 3/*Stop*/; i++/*Update*/){
       text += i + " "; 
     }
     console.log(text) // prints => 1 2 3
