@@ -39,16 +39,9 @@
 
 // 2. Manipulate Strings With Methods
         var str = "This is the example"
-    /* 
-    2-1) .length
-        a. This will print the length of the variable
-        b. Followed by the "." after the variable
-        c. Does not require a "()" after inialized 
-        */
-        console.log(str.length) // prints => 19
 
     /*
-    2-2) .slice()
+    2-1) .slice()
         a. This method can slice an array or string in specified places
         b. The 1st parameter is where the method starts
         c. The 2nd parameter is where it ends not given will go to end of variable
@@ -58,7 +51,7 @@
         console.log(sliced)     // prints => 'his is the ex'
 
     /*
-    2-3) .substr()
+    2-2) .substr()
         a. The first arguement is required, that is the index where the string begins
         b. The 2nd argument will print till that index including that index
         c. The 2nd argument will count from the 1st argument
@@ -69,7 +62,7 @@
         console.log(subbed1) // prints => This is the ex
 
     /*
-    2-4) .substring()
+    2-3) .substring()
         a. Works similarly to slice
         b. Handles negative numbers as zero
         */
@@ -77,7 +70,7 @@
         console.log(subStringed); // prints => 'his is the ex'
 
     /*
-    2-5) .replace()
+    2-4) .replace()
         a. Require 2 prameters the 1st is the character it is looking to replace
             the 2nd is the character to replace the 1st.
         */
@@ -85,7 +78,7 @@
         console.log(rep); // prints => This is uhe example
 
     /*
-    2-6) .toUpperCase() .toLowerCasse()
+    2-5) .toUpperCase() .toLowerCasse()
         a. They both upper case or lower case the whole string.
         b. The method takes no parameters.
         */
@@ -94,7 +87,7 @@
         var low = str.toLowerCase();
         console.log(low)            // prints => this is the example
     /*
-    2-7) .concat()
+    2-6) .concat()
         a. Can take in many parameters to be joined to the str it is being 
         concatanated to.
         b. Can take in direct strings or variables.
@@ -102,7 +95,7 @@
         var dis = 'right here!'
         console.log(str.concat(", ",dis)) // prints => This is the example, right here!
     /*
-    2-8) .trim()
+    2-7) .trim()
         a. Removes the white space before and after the string.
         b. Takes no parameters.
         */
@@ -110,7 +103,7 @@
         var trimmed = space.trim()
         console.log(trimmed)        // prints => hello
         /*
-    2-9) .split()
+    2-8) .split()
         a. Method splits a string into an array.
         b. The parameter is where it is broken into the array.
         */

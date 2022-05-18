@@ -49,9 +49,20 @@ ii. Does not get hoisted and is limited to their scope
 iii. For a for loop let is a good practice to use becsue it can be blocked scoped 
     and used again
     */
-        var vari = "This is var"
-        let letbe = "This is let"
-        const PERM = 'This is CONST'
+    var vari = "This is var"
+    let letbe = "This is let"
+    const PERM = 'This is CONST'
+    if ( 1 > 0) {
+        console.log(vari)   // prints -> "This is a var"
+        console.log(letbe)  // prints -> This is a let
+        console.log(PERM)   // prints ->  This is CONST
+      var variIn = 'I'
+      let letBeIn = 'am'
+      const PERMiN = "scoped"
+    }
+    console.log(variIn)     // prints -> I
+    console.log(letBeIn)    // Refernce Error
+    console.log(PERMiN)     // Refernce Error
 
 
 // 5. Hoisting

@@ -22,10 +22,10 @@
 
 // 2. For Loops
   /* 
-  a. Contains 3 parts the initial exppression, the conditional and the incremental
-  b. The intial expression is ran once and then as the conditional is flase it runs
-  the statement within the loop then running the incremental expression.
-  c. Usually used to loop over arrays.  
+  a. Contains 3 parts -> for(start; stop; update) { code to run}
+  b. Start: Initates a varible that starts counting at a certain value
+  c. Stop: Defines the condition that when returns false will exit the loop
+  d. Upadte: Defines how to increment or decrement the  iniatial start variable 
   */
     var nums = "";
     for(let i = 0; i <= 3; i++){
